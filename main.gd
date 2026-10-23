@@ -27,5 +27,6 @@ func start_game():
 
 
 func _on_take_order_button_pressed() -> void:
-	
+	$TakeOrderButton.visible = false
+	$Order.spawn($Customer.position + Vector2(0,-200))
 	pass # Replace with function body.

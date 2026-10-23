@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cco3th6l7xdrj"]
+
+[ext_resource type="Script" uid="uid://bjb6g2anb3yk0" path="res://order.gd" id="1_vdalh"]
+[ext_resource type="Texture2D" uid="uid://2acmfkuawyvb" path="res://Art/tilemap_packed.png" id="2_4o8cy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7pnm"]
+atlas = ExtResource("2_4o8cy")
+region = Rect2(180, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jx6t"]
+atlas = ExtResource("2_4o8cy")
+region = Rect2(198, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4d4t"]
+atlas = ExtResource("2_4o8cy")
+region = Rect2(216, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mko7j"]
+atlas = ExtResource("2_4o8cy")
+region = Rect2(36, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nceow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7pnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jx6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4d4t")
+}],
+"loop": 1,
+"name": &"Burger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mko7j")
+}],
+"loop": 1,
+"name": &"Drink",
+"speed": 5.0
+}]
+
+[node name="Order" type="Node2D" unique_id=434716368]
+script = ExtResource("1_vdalh")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1170438473]
+offset_right = 204.0
+offset_bottom = 116.0
+
+[node name="Next" type="Button" parent="." unique_id=1403090699]
+offset_left = 153.0
+offset_top = 85.0
+offset_right = 204.0
+offset_bottom = 116.0
+text = "Next"
+
+[node name="Back" type="Button" parent="." unique_id=1067053666]
+offset_left = -1.0
+offset_top = 84.0
+offset_right = 44.0
+offset_bottom = 115.0
+text = "Back"
+
+[node name="Item" type="AnimatedSprite2D" parent="." unique_id=1126594673]
+position = Vector2(96, 52)
+scale = Vector2(3.5555556, 3.5555556)
+sprite_frames = SubResource("SpriteFrames_nceow")
+animation = &"Burger"
+
+[connection signal="pressed" from="Next" to="." method="next"]
+[connection signal="pressed" from="Back" to="." method="backward"]
