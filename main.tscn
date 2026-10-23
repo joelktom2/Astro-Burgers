@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dcje831mwuk3j"]
+
+[ext_resource type="Script" uid="uid://bgxvfnn0ucq07" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b42my0rb0wlie" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://drousc5cl31r0" path="res://customer.tscn" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://c8y7v2bwvyxdq" path="res://Art/counter-Area.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dg0cdxqkbmxch" path="res://kenney_toon-characters/male chars/Parts HD/head.png" id="4_1bvp3"]
+
+[node name="Main" type="Node" unique_id=1100501397]
+script = ExtResource("1_h2yge")
+customer_scene = ExtResource("2_1bvp3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=802524987]
+offset_right = 1701.0217
+offset_bottom = 957.3334
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_lquwl")
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1659557214]
+position = Vector2(1131, 548)
+
+[node name="Player" parent="." unique_id=777597391 instance=ExtResource("1_ig7tw")]
+position = Vector2(94, -309)
+
+[node name="Customer" parent="." unique_id=117231017 instance=ExtResource("2_1bvp3")]
+position = Vector2(-137, 531)
+speed = 3
+
+[node name="CustStartPos" type="Marker2D" parent="." unique_id=1359086869]
+position = Vector2(99, 543)
+
+[node name="CustEndPos" type="Marker2D" parent="." unique_id=684646396]
+position = Vector2(614, 538)
+
+[node name="TakeOrderButton" type="Button" parent="." unique_id=1312295906]
+offset_left = -271.0
+offset_top = -316.0
+offset_right = -66.0
+offset_bottom = -212.0
+text = "Take Order"
+icon = ExtResource("4_1bvp3")
+
+[connection signal="pressed" from="TakeOrderButton" to="." method="_on_take_order_button_pressed"]

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://drousc5cl31r0"]
+
+[ext_resource type="Texture2D" uid="uid://coogmoyxbl113" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_idle.png" id="1_551dw"]
+[ext_resource type="Script" uid="uid://ll7p13n0gbas" path="res://customer.gd" id="1_sll7s"]
+[ext_resource type="Texture2D" uid="uid://dse2rcd1nu4hv" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk0.png" id="2_sll7s"]
+[ext_resource type="Texture2D" uid="uid://cvu3yjt832eqr" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk1.png" id="3_crw8f"]
+[ext_resource type="Texture2D" uid="uid://dt6osprxqtl28" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk2.png" id="4_5sdco"]
+[ext_resource type="Texture2D" uid="uid://c4hqhcniwcjgp" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk3.png" id="5_aive0"]
+[ext_resource type="Texture2D" uid="uid://bvc5pt8f88hae" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk4.png" id="6_xnek4"]
+[ext_resource type="Texture2D" uid="uid://chpr126r05jv3" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk5.png" id="7_gwwo3"]
+[ext_resource type="Texture2D" uid="uid://cdje5eikamlja" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk6.png" id="8_bfkud"]
+[ext_resource type="Texture2D" uid="uid://dekpoawkf6d44" path="res://kenney_toon-characters/zomb chars/Poses HD/character_zombie_walk7.png" id="9_c6vkw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nceow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_551dw")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sll7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_crw8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5sdco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aive0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xnek4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gwwo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bfkud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6vkw")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[node name="Customer" type="Node2D" unique_id=117231017]
+position = Vector2(0, 3)
+script = ExtResource("1_sll7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1570312834]
+sprite_frames = SubResource("SpriteFrames_nceow")
+animation = &"idle"
